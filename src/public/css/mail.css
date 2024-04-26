@@ -1,0 +1,51 @@
+.container {
+    text-align: center;
+    max-width: 1500px;
+    background-color: #dddddd;
+    height: 680px;
+    padding-top: 10%;
+}
+
+.card-header {
+    font-size: 20px;
+}
+
+.card-body {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 10px 30px 10px 30px;
+    border-color: #000;
+    background-color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+        background-color: #dddddd;
+        height: auto;
+        padding-top: 10%;
+    }
+
+    .card-header {
+        font-size: 20px;
+    }
+
+    .card-body {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 10px 30px 10px 30px;
+        border-color: #000;
+        background-color: #fff;
+    }
+}

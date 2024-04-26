@@ -1,0 +1,32 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.header {
+    max-width: 1500px;
+}
+
+.header__ttl {
+    padding: 20px 100px;
+}
+
+
+.header__title {
+    text-decoration: none;
+    font-size: 20px;
+    color: #3366FF;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+    .header__ttl {
+        padding: 10px 20px;
+    }
+
+    .header__title {
+        font-size: 18px;
+    }
+}

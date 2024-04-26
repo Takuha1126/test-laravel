@@ -1,0 +1,185 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+.header {
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header__item {
+    font-size: 25px;
+    font-weight: bold;
+    color: #3366FF;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.shop {
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+    background-color: #3366FF;
+    margin-right: 20px;
+}
+
+.shop a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.logout__button {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+    background-color: #3366FF;
+    margin-right: 30px;
+    font-size: 15px;
+}
+
+
+.main {
+    max-width: 650px;
+    margin: 30px auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main__title {
+    font-size: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.all__ttl {
+    font-size: 20px;
+}
+
+.label {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 50%;
+
+}
+
+.form-group select {
+    border: none;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+
+.form-group textarea {
+    height: 150px;
+    border: none;
+    border-radius: 5px;
+}
+
+.button {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.first-mail {
+    background-color: #3366FF;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.second-mail {
+    background-color: #3366FF;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.alert-success {
+    color: #3366FF;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.error {
+    color: red;
+}
+
+
+@media (max-width: 768px) {
+    .nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .shop,
+    .logout {
+        margin-right: 10px;
+        margin-top: 5px;
+        flex-shrink: 0;
+    }
+
+    .shop a,
+    .logout__button {
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid #3366FF;
+        border-radius: 5px;
+        background-color: #3366FF;
+        padding: 5px 10px;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+
+    .logout__button {
+        margin-bottom: 3px;
+    }
+
+    .main {
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+
+    .header__item {
+        font-size: 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .label,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px 0;
+    }
+
+    .label {
+        margin-bottom: 10px;
+    }
+}

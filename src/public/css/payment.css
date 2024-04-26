@@ -1,0 +1,59 @@
+.payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.StripeElement {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    padding: 10px;
+    color: #32325d;
+}
+
+.button {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.button__ttl {
+    padding: 10px 30px;
+    background-color: #3366FF;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.StripeElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}

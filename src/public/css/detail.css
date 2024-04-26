@@ -1,0 +1,170 @@
+.main {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail {
+    max-width: 600px;
+    flex: 1 1 100%;
+}
+
+.detail__title {
+    display: flex;
+    align-items: center;
+}
+
+.detail__title i {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.title__item {
+    padding-left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.detail__content img {
+    width: 100%;
+}
+
+.detail__info {
+    display: flex;
+    font-size: 15px;
+}
+
+.detail__area {
+    padding-right: 30px;
+}
+
+.reservation {
+    max-width: 500px;
+    margin-left: 100px;
+    background-color: #3366FF;
+    width: 100%;
+    border-radius: 10px;
+    flex: 1 1 100%;
+}
+
+.reservation__ttl {
+    padding-top: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-left: 30px;
+}
+
+.item {
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.about {
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.item input {
+    border-radius: 5px;
+    border: 1px solid #fff;
+    width: 200px;
+}
+
+
+.about select {
+    border-radius: 5px;
+    border: 1px solid #fff;
+    width: 400px;
+    padding: 2px 0;
+
+}
+
+.form__item {
+    background-color: #4D8BFF;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    margin-left: 30px;
+
+}
+
+.table {
+    border-collapse: collapse;
+
+}
+
+
+.table__th,
+.table__td {
+    padding: 10px 20px;
+    color: #fff;
+    text-align: left;
+}
+
+.button {
+    margin-top: 180px;
+    background-color: #1155CC;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 0 20px 0;
+}
+
+.button__title {
+    background-color: #1155CC;
+    border: 1px solid #1155CC;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.error {
+    color: red;
+    padding: 10px 30px;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail {
+        max-width: 95%;
+        margin-bottom: 20px;
+    }
+
+    .reservation {
+        max-width: 90%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .detail__info,
+    .reservation__ttl,
+    .item,
+    .about,
+    .form__item {
+        font-size: 14px;
+    }
+
+    .item input {
+        width: 30%;
+    }
+
+    .about select {
+        width: 80%;
+    }
+
+    .form__item {
+        width: 82%;
+        margin-top: 30px;
+    }
+
+    .button {
+        margin-top: 200px;
+    }
+}

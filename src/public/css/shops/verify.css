@@ -1,0 +1,180 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.header {
+    border-bottom: 1px solid #000;
+}
+
+.header__ttl {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__item {
+    font-size: 25px;
+    font-weight: bold;
+    color: #3366FF;
+
+}
+
+.nav__button {
+    display: flex;
+    align-items: center;
+}
+
+.nav__button a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+    background-color: #3366FF;
+    margin-right: 30px;
+}
+
+.logout__button {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+    background-color: #3366FF;
+    margin-right: 30px;
+    font-size: 15px;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.btn-primary {
+    background-color: #3366FF;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    margin: 20px 0 0 100px;
+}
+
+.main__group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main__ttl {
+    margin-right: 30px;
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.form-control {
+    width: 300px;
+    height: 100px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.button__ttl {
+    text-align: right;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.check__button {
+    background-color: #3366FF;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    text-align: right;
+}
+
+.reservation__group {
+    background-color: #3366FF;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.reservation__item {
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .nav__button {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .nav__button a {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        vertical-align: middle;
+    }
+
+    .logout__button {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        vertical-align: middle;
+        padding: 8px;
+    }
+
+    .main {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .btn-primary {
+        margin: 20px 0;
+    }
+
+    .main__group {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main__ttl {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .check__button {
+        margin-top: 20px;
+    }
+
+    .reservation__group {
+        padding: 20px 40px;
+    }
+}

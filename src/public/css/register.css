@@ -1,0 +1,139 @@
+main {
+    margin: 100px auto;
+    border: 1px solid #aaaaaa;
+    max-width: 400px;
+    padding-top: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.main__title {
+    color: #fff;
+}
+
+.main__ttl {
+    padding-left: 20px;
+    background-color: #3366FF;
+    margin-top: 0;
+    padding: 1px 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.main__item {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.main__user {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.main__user input {
+    border: none;
+    padding-left: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #000;
+    width: 280px;
+}
+
+.main__email {
+    padding-bottom: 20px;
+}
+
+.main__email input {
+    border: none;
+    padding-left: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #000;
+    width: 280px;
+}
+
+.main__password {
+    padding-bottom: 20px;
+}
+
+.main__password input {
+    border: none;
+    padding-left: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #000;
+    width: 280px;
+}
+
+.button {
+    text-align: right;
+    margin: 40px 20px 20px 0;
+}
+
+.button__title {
+    background-color: #3366FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        max-width: 300px;
+    }
+
+    .main__ttl {
+        padding: 10px 20px;
+        background-color: #3366FF;
+        margin-top: 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .main__item {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .main__user,
+    .main__email,
+    .main__password {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin: 10px 20px;
+    }
+
+    .main__user input,
+    .main__email input,
+    .main__password input {
+        flex: 1;
+        border: none;
+        padding-left: 10px;
+        font-size: 15px;
+        border-bottom: 1px solid #000;
+        margin-left: 5px;
+    }
+
+    .button {
+        margin: 40px 20px 20px 0;
+    }
+
+    .button__title {
+        background-color: #3366FF;
+        color: #fff;
+        font-size: 15px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 20px;
+    }
+
+    .error {
+        color: red;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,123 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.header {
+    max-width: 1500px;
+    border-bottom: 1px solid #000;
+}
+
+.header__ttl {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main {
+    margin: 100px auto;
+    background-color: #fff;
+    max-width: 500px;
+    border-radius: 0 0 5px 5px;
+}
+
+.main__ttl {
+    margin: 0 auto;
+    background-color: #3366FF;
+    border-radius: 5px 5px 0 0;
+    padding: 1px 0 1px 20px;
+    color: #fff;
+}
+
+.main__about {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.shop {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 20px 0;
+}
+
+.password {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 30px 0;
+}
+
+.shop select {
+    width: 70%;
+}
+
+.password input {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.button {
+    text-align: right;
+    padding: 30px 0;
+}
+
+.button__ttl {
+    background-color: #3366FF;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.button__register {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.button__register a {
+    text-decoration: none;
+}
+
+.error {
+    color: #ff0000;
+    text-align: center;
+}
+
+.alert-danger {
+    color: #ff0000;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .header__ttl {
+        padding: 10px;
+    }
+
+    .main {
+        margin: 100px auto;
+    }
+
+    .main__ttl {
+        padding: 10px;
+    }
+
+    .shop,
+    .password {
+        padding: 30px 5px;
+    }
+
+    .button {
+        padding: 15px 0;
+        margin-right: 10px;
+    }
+
+    .button__ttl {
+        padding: 8px 15px;
+    }
+}

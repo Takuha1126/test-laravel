@@ -1,0 +1,299 @@
+.main {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.main__ttl {
+    text-align: center;
+}
+
+.main__title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.main__group {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.alert-danger {
+    color: red;
+}
+
+.about {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.reservation-container,
+.favorite-container {
+    width: calc(60% - 10px);
+    margin-right: 10px;
+}
+
+.reservation-container {
+    max-width: 600px;
+    margin-left: 30px;
+}
+
+
+
+.item__title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.shop__delete {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.favorite-container {
+    max-width: 600px;
+
+}
+
+.favorite__title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.favorites-message {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+
+
+.shop {
+    background-color: #3366FF;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.shop__ttl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop__item {
+    display: flex;
+    align-items: center;
+}
+
+.shop__title {
+    color: #fff;
+    padding-left: 10px;
+}
+
+.button {
+    background-color: #3366FF;
+    border: none;
+    font-size: 15px;
+}
+
+.table__th {
+    text-align: left;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.table__td {
+    color: #fff;
+}
+
+.table__button {
+    display: flex;
+    align-items: center;
+    margin:10px 0 10px 0
+}
+
+.visit-button {
+    margin-right: 10px;
+}
+
+.edit-button {
+    margin-left: 10px;
+}
+
+.new__date,
+.new__time,
+.new__people {
+    color: #fff;
+    margin-left: 10px;
+}
+
+input {
+    border-radius: 3px;
+    border: none;
+}
+
+input,select {
+    width: 90px;
+}
+
+.favorite__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.favorite__item {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.favorite__item:nth-child(odd) {
+    margin-right: 20px;
+}
+
+.card {
+    border-radius: 5px 5px 0 0;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.favorite__content {
+    padding: 10px;
+}
+
+.favorite__group {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.favorite__tag {
+    display: flex;
+    font-size: 12px;
+}
+
+.favorite__area {
+    margin-right: 10px;
+}
+
+.favorite_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button__title {
+    background-color: #3366FF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.favorite__group .message__item {
+    display: flex;
+}
+
+.heart-button {
+    font-size: 48px;
+    color: gray;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.heart-button:hover {
+    color: gray;
+}
+
+.heart-button.active {
+    color: red;
+}
+
+.heart-button.liked {
+    color: red;
+}
+
+
+@media screen and (max-width: 768px) {
+    .main {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .main__group,
+    .favorite__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about,
+    .reservation-container,
+    .favorite-container {
+        flex: none;
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    .reservation-container,
+    .favorite-container {
+        margin-top: 20px;
+    }
+
+    .favorite__item,
+    .favorite__item:nth-child(odd) {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .shop,
+    .favorite__content {
+        padding: 5px;
+    }
+
+    .item__title,
+    .favorite__title,
+    .shop__title,
+    .favorites-message,
+    .shop__delete {
+        font-size: 20px;
+    }
+
+    .shop__table td {
+        padding: 5px 0 5px 10px;
+    }
+
+    .new__date input,
+    .new__time select,
+    .new__people select {
+        width: 100%;
+    }
+
+    .button,
+    .payment-button,
+    .edit-button,
+    .visit-button,
+    .update-button,
+    .cancel-button,
+    .button__title {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .favorite_button,
+    .favorite__group,
+    .favorite__tag {
+        display: flex;
+        align-items: center;
+    }
+}

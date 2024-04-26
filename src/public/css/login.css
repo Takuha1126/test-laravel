@@ -1,0 +1,119 @@
+.main {
+    margin: 100px auto;
+    border: 1px solid #aaaaaa;
+    max-width: 400px;
+    padding-top: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.main__ttl {
+    padding-left: 20px;
+    background-color: #3366FF;
+    margin-top: 0;
+    padding: 1px 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.main__login {
+    color: #fff;
+}
+
+.main__item {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.main__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__email {
+    padding-bottom: 20px;
+}
+
+.main__email input {
+    border: none;
+    padding-left: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #000;
+    width: 280px;
+}
+
+.main__password {
+    padding-bottom: 20px;
+}
+
+.main__password input {
+    border: none;
+    padding-left: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #000;
+    width: 280px;
+}
+
+.button {
+    text-align: right;
+    margin: 40px 20px 20px 0;
+}
+
+.button__title {
+    background-color: #3366FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    text-align: center;
+
+}
+@media screen and (max-width: 768px) {
+    .main {
+        margin: 100px auto;
+        max-width: 300px;
+        border: 1px solid #aaaaaa;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .main__ttl {
+        padding: 10px 20px;
+    }
+
+    .main__item {
+        margin: 20px 30px;
+    }
+
+    .main__email,
+    .main__password {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+    }
+
+    .main__email input,
+    .main__password input {
+        flex: 1;
+        border: none;
+        padding-left: 10px;
+        font-size: 15px;
+        border-bottom: 1px solid #000;
+    }
+
+    .button {
+        margin-right: 20px;
+    }
+
+    .button__title {
+        padding: 5px 10px;
+    }
+
+
+}

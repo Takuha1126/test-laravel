@@ -1,0 +1,308 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.header__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__ttl {
+    margin-top: 20px;
+}
+
+.header__title {
+    text-decoration: none;
+    font-size: 20px;
+    color: #3366FF;
+    font-weight: bolder;
+}
+
+.nav {
+    margin-top: 20px;
+}
+
+.nav__ttl {
+    border: 1px solid #aaaaaa;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+
+.first,
+.second {
+    font-size: 14px;
+    margin: 5px 10px 5px 0;
+    padding: 6px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    width: 130px;
+    box-sizing: border-box;
+}
+
+.second {
+    margin-right: 0;
+}
+
+.nav__ttl input {
+    width: 280px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.main__ttl {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main__group {
+    margin: 10px auto;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.main__content {
+    padding: 20px;
+}
+
+.main__title {
+    font-weight: bold;
+}
+
+.main__tag {
+    display: flex;
+}
+
+.main__area {
+    padding-right: 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button__title {
+    background-color: #3366FF;
+    color: #fff;
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+}
+
+.heart-button {
+    font-size: 48px;
+    color: gray;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.heart-button:hover {
+    color: gray;
+}
+
+.heart-button.active {
+    color: red;
+}
+
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    border: none !important;
+
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container--default .select2-selection--multiple .select2-selection__arrow {
+    border-left: none !important;
+}
+
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    border: none !important;
+}
+
+.heart-button.liked {
+    color: red;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        background-color: #dddddd;
+    }
+
+    .header {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__ttl {
+        margin-top: 20px;
+    }
+
+    .header__title {
+        text-decoration: none;
+        font-size: 20px;
+        color: #3366FF;
+        font-weight: bold;
+    }
+
+    .nav {
+        margin-top: 20px;
+    }
+
+    .nav__ttl {
+        border: 1px solid #aaaaaa;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .first,
+    .second {
+        margin: 5px 0;
+        padding: 5px 10px;
+        border: none;
+        border-right: 1px solid #cccccc;
+    }
+
+    select {
+        font-size: 10px;
+    }
+
+    .nav__ttl input {
+        width: 100%;
+        padding: 5px;
+        border: none;
+    }
+
+    .main {
+        max-width: 1200px;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .main__ttl {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main__group {
+        margin: 10px auto;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .main__content {
+        padding: 20px;
+    }
+
+    .main__title {
+        font-weight: bold;
+    }
+
+    .main__tag {
+        flex-direction: column;
+    }
+
+    .main__tag p {
+        margin-bottom: 2px;
+    }
+
+
+    .button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .button__title {
+        background-color: #3366FF;
+        color: #fff;
+        border: 1px solid #3366FF;
+        border-radius: 5px;
+    }
+
+    .heart-button {
+        font-size: 48px;
+        color: gray;
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+    }
+
+    .heart-button:hover {
+        color: gray;
+    }
+
+    .heart-button.active {
+        color: red;
+    }
+
+    .select2-container--default .select2-selection--single,
+    .select2-container--default .select2-selection--multiple {
+        border: none;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow,
+    .select2-container--default .select2-selection--multiple .select2-selection__arrow {
+        border-left: none;
+
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        border: none;
+
+    }
+
+    .heart-button.liked {
+        color: red;
+    }
+}

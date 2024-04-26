@@ -1,0 +1,159 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.header {
+    border-bottom: 1px solid #000;
+}
+
+.header__ttl {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__item {
+    font-size: 25px;
+    font-weight: bold;
+    color: #3366FF;
+
+}
+
+.nav__button {
+    display: flex;
+    align-items: center;
+}
+
+.nav__button a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+    background-color: #3366FF;
+    margin-right: 30px;
+}
+
+.logout__button {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #3366FF;
+    border-radius: 5px;
+    background-color: #3366FF;
+    margin-right: 30px;
+    font-size: 15px;
+}
+
+.alert-success {
+    margin: 10px 0 0 10px;
+    color: #3366FF;
+}
+
+.main {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.main__title {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.main__p {
+    font-size: 20px;
+    color: #3366FF;
+}
+
+.label {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.main__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__item input,
+.main__item select,
+.main__item textarea {
+    width: 50%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.button {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.button__ttl {
+    padding: 10px 50px;
+    background-color: #3366FF;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+}
+
+.error-message {
+    text-align: right;
+    margin-right: 40px;
+    color: #ff0000;
+}
+
+
+@media (max-width: 768px) {
+    .header__ttl {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        margin-left: auto;
+        margin-bottom: 20px;
+    }
+
+    .nav__button {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__button a,
+    .logout__button {
+        margin-left: 10px;
+    }
+
+    .main__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .main__about {
+        margin-left: 10px;
+    }
+
+    .main__item label,
+    .main__item input,
+    .main__item select,
+    .main__item textarea {
+        width: 80%;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .button__ttl {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}

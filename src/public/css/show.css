@@ -1,0 +1,137 @@
+.main {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.main__title {
+    margin-bottom: 30px;
+}
+
+.evaluation__title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main__ttl {
+    text-align: center;
+}
+
+.evaluation__item {
+    margin-bottom: 30px;
+}
+
+.evaluation__about,
+.evaluation__about-second,
+.evaluation__about-time {
+    font-size: 20px;
+}
+
+.evaluation__rating-title {
+    font-size: 20px;
+}
+
+.star-rating {
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.fas.fa-star {
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.fas.fa-star.checked {
+    color: #ffc107;
+}
+
+.evaluation__comment-title {
+    font-size: 20px;
+}
+
+.evaluation__comment-field {
+    width: 300px;
+    height: 100px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button {
+    margin-top: 40px;
+}
+
+.button__title {
+    padding: 10px 30px;
+    background-color: #3366FF;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+}
+
+.error {
+    color: red;
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+
+    .main__title {
+        margin-left: 50px;
+    }
+
+
+
+    .evaluation__item,
+    .evaluation__rating,
+    .evaluation__comment {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .evaluation__title,
+    .evaluation__about,
+    .evaluation__about-second,
+    .evaluation__about-time,
+    .evaluation__rating-title,
+    .evaluation__comment-title {
+        font-size: 14px;
+    }
+
+    .evaluation__comment-field {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .star-rating {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .evaluation__comment-field {
+        width: 300px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button__title {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .star-rating .fas.fa-star {
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
