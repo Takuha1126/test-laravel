@@ -154,7 +154,6 @@ function toggleFavorite(button, shopId) {
     const method = isLiked ? 'DELETE' : 'POST';
 
     button.classList.toggle('liked', !isLiked);
-    // ハートのスタイルを切り替える
     toggleHeart(button);
 
     fetch(`/favorite/toggle/${shopId}`, {
@@ -169,7 +168,6 @@ function toggleFavorite(button, shopId) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
             button.classList.toggle('liked', isLiked);
-            // エラーがあった場合にもハートのスタイルを修正する
             toggleHeart(button);
         }
     })
@@ -177,7 +175,6 @@ function toggleFavorite(button, shopId) {
         console.error('Error:', error);
         alert('お気に入りの操作に失敗しました。');
         button.classList.toggle('liked', isLiked);
-        // エラーがあった場合にもハートのスタイルを修正する
         toggleHeart(button);
     });
 }
@@ -230,7 +227,7 @@ $(document).ready(function() {
 });
 
 function toggleHeart(element) {
-    element.classList.toggle('red-heart');
+    $(element).toggleClass('red-heart');
 }
 
 
