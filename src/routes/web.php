@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\ShopAuthController;
 use App\Http\Controllers\CreateShopRepresentativeController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ImageUploadController;
 
 
 
@@ -97,6 +98,8 @@ Route::post('/admin/login', [AdminAuthController::class, 'login']);
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 Route::get('/admin/register', [AdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
 Route::post('/admin/register', [AdminAuthController::class, 'register']);
+
+
 
 
 
