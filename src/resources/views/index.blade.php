@@ -153,6 +153,8 @@ function toggleFavorite(button, shopId) {
     const isLiked = button.classList.contains('liked');
     const method = isLiked ? 'DELETE' : 'POST';
 
+    button.classList.toggle('liked', !isLiked);
+
     fetch(`/favorite/toggle/${shopId}`, {
         method: method,
         headers: {
@@ -164,17 +166,17 @@ function toggleFavorite(button, shopId) {
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
+            button.classList.toggle('liked', isLiked);
         }
-        return response.json();
-    })
-    .then(data => {
-        updateFavoriteStatus(button, shopId, JSON.parse(localStorage.getItem('favorites')), method === 'POST');
     })
     .catch(error => {
         console.error('Error:', error);
         alert('お気に入りの操作に失敗しました。');
+        button.classList.toggle('liked', isLiked);
     });
 }
+
+
 
 
 $(document).ready(function() {
