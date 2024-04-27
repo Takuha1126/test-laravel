@@ -227,8 +227,15 @@ $(document).ready(function() {
 });
 
 function toggleHeart(element) {
-    $(element).toggleClass('red-heart');
+    if ($(element).hasClass('red-heart')) {
+        $(element).removeClass('red-heart');
+        $(element).css('color', 'gray');
+    } else {
+        $(element).addClass('red-heart');
+        $(element).css('color', 'red');
+    }
 }
+
 
 
 
