@@ -20,6 +20,7 @@ button {
     padding: 10px 30px 10px 30px;
     border-color: #000;
     background-color: #fff;
+    color: #000;
 }
 
 
@@ -47,5 +48,6 @@ button {
         padding: 10px 30px 10px 30px;
         border-color: #000;
         background-color: #fff;
+        color: #000;
     }
 }

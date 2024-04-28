@@ -80,7 +80,7 @@
                         <img src="{{ $shop->photo_url }}">
                     </div>
                     <div class="main__content">
-                        <div class="main__title">{{ $shop->shops_name }}</div>
+                        <div class="main__title">{{ $shop->shop_name }}</div>
                         <div class="main__tag">
                             <p class="main__area">#{{ $shop->area->area_name }}</p>
                             <p class="main__genre">#{{ $shop->genre->genre_name }}</p>
