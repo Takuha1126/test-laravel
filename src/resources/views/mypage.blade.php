@@ -138,7 +138,7 @@
                                         @if ($favorite->status)
                                         <form action="{{ route('favorite.toggle', ['shopId' => $shop->id]) }}" method="post">
                                             @csrf
-                                            <button type="submit" class="heart-button liked" data-shop-id="{{ $shop->id }}">&#10084;</button>
+                                            <button type="submit" class="heart-button liked" data-shop-id="{{ $shop->id }}"><i class="fas fa-heart"></i></button>
                                         </form>
                                         @endif
                                     </div>

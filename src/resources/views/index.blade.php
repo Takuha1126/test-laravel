@@ -80,7 +80,7 @@
                         <img src="{{ $shop->photo_url }}">
                     </div>
                     <div class="main__content">
-                        <div class="main__title">{{ $shop->shop_name }}</div>
+                        <div class="main__title">{{ $shop->shops_name }}</div>
                         <div class="main__tag">
                             <p class="main__area">#{{ $shop->area->area_name }}</p>
                             <p class="main__genre">#{{ $shop->genre->genre_name }}</p>
@@ -91,7 +91,7 @@
                             </form>
                             <form class="favorite-form" action="{{ route('favorite.toggle', ['shopId' => $shop->id]) }}" method="post">
                             @csrf
-                                <button type="submit" class="heart-button" data-shop-id="{{ $shop->id }}">&#10084;</button>
+                                <button type="submit" class="heart-button" data-shop-id="{{ $shop->id }}"><i class="fas fa-heart"></i></button>
                             </form>
                         </div>
                     </div>
@@ -106,141 +106,108 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    fetchFavoritesAndUpdateHearts();
-
-    const heartButtons = document.querySelectorAll('.heart-button');
-    heartButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault();
-            const shopId = this.dataset.shopId;
-            toggleFavorite(this, shopId);
-        });
-    });
-});
-
-function fetchFavoritesAndUpdateHearts() {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
-
-    document.querySelectorAll('.heart-button').forEach(button => {
-        const shopId = button.dataset.shopId;
-
-        updateFavoriteStatus(button, shopId, favorites);
-
-        fetch(`/favorite/status/${shopId}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            updateFavoriteStatus(button, shopId, favorites, data.isFavorite);
-        })
-        .catch(error => {
-            console.error('Error fetching favorite status:', error);
-        });
-    });
-}
-
-function updateFavoriteStatus(button, shopId, favorites, isFavorite = favorites[shopId] || false) {
-    button.classList.toggle('liked', isFavorite);
-    favorites[shopId] = isFavorite;
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-}
-
-function toggleFavorite(button, shopId) {
-    const isLiked = button.classList.contains('liked');
-    const method = isLiked ? 'DELETE' : 'POST';
-
-    button.classList.toggle('liked', !isLiked);
-    toggleHeart(button);
-
-    fetch(`/favorite/toggle/${shopId}`, {
-        method: method,
-        headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ shop_id: shopId })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-            button.classList.toggle('liked', isLiked);
-            toggleHeart(button);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('お気に入りの操作に失敗しました。');
-        button.classList.toggle('liked', isLiked);
-        toggleHeart(button);
-    });
-}
-
-
-
 
 $(document).ready(function() {
-    $('.first').select2({
-        minimumResultsForSearch: Infinity
-    });
-    $('.second').select2({
-        minimumResultsForSearch: Infinity
-    });
+    fetchFavoritesAndUpdateHearts();
+    setupHeartButtons();
+    setupSelect2();
+    setupFilters();
 
-    $('#searchInput').on('input', function() {
-        filterCards();
-    });
+    function setupHeartButtons() {
+        $('.heart-button').on('click', function(event) {
+            event.preventDefault();
+            const shopId = $(this).data('shopId');
+            toggleFavorite($(this), shopId);
+        });
+    }
 
-    $('#areaSelect').on('change', function() {
-        filterCards();
-    });
+    function fetchFavoritesAndUpdateHearts() {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
 
-    $('#genreSelect').on('change', function() {
-        filterCards();
-    });
+        $('.heart-button').each(function() {
+            const shopId = $(this).data('shopId');
+            updateFavoriteStatus($(this), shopId, favorites);
+
+            fetch(`/favorite/status/${shopId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                updateFavoriteStatus($(this), shopId, favorites, data.isFavorite);
+            })
+            .catch(error => {
+                console.error('Error fetching favorite status:', error);
+            });
+        });
+    }
+
+    function updateFavoriteStatus(button, shopId, favorites, isFavorite = favorites[shopId] || false) {
+        button.toggleClass('liked', isFavorite);
+        favorites[shopId] = isFavorite;
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+
+    function toggleFavorite(button, shopId) {
+        const isLiked = button.hasClass('liked');
+        const method = isLiked ? 'DELETE' : 'POST';
+
+        fetch(`/favorite/toggle/${shopId}`, {
+            method: method,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ shop_id: shopId })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            updateFavoriteStatus(button, shopId, JSON.parse(localStorage.getItem('favorites')), method === 'POST');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('お気に入りの操作に失敗しました。');
+        });
+    }
+
+    function setupSelect2() {
+        $('.first, .second').select2({
+            minimumResultsForSearch: Infinity
+        });
+    }
+
+    function setupFilters() {
+        $('#searchInput, #areaSelect, #genreSelect').on('input change', function() {
+            filterCards();
+        });
+    }
 
     function filterCards() {
         var selectedArea = $('#areaSelect').val();
         var selectedGenre = $('#genreSelect').val();
         var keyword = $('#searchInput').val().toLowerCase();
 
-        var cards = $('.main__group');
-
-        cards.each(function() {
+        $('.main__group').each(function() {
             var areaName = $(this).find('.main__area').text();
             var genreName = $(this).find('.main__genre').text();
             var cardText = $(this).text().toLowerCase();
-            
 
-            if ((selectedArea === "" || areaName.includes(selectedArea)) &&
-                (selectedGenre === "" || genreName.includes(selectedGenre)) &&
-                (keyword === "" || cardText.includes(keyword))) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
+            var areaMatch = selectedArea === "" || areaName.includes(selectedArea);
+            var genreMatch = selectedGenre === "" || genreName.includes(selectedGenre);
+            var keywordMatch = keyword === "" || cardText.includes(keyword);
+
+            $(this).toggle(areaMatch && genreMatch && keywordMatch);
         });
     }
 });
-
-function toggleHeart(element) {
-    if ($(element).hasClass('red-heart')) {
-        $(element).removeClass('red-heart');
-        $(element).css('color', 'gray');
-    } else {
-        $(element).addClass('red-heart');
-        $(element).css('color', 'red');
-    }
-}
-
-
-
-
-
-
-    </script>
+</script>
 </body>
 </html>
+

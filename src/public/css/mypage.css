@@ -203,7 +203,7 @@ input,select {
 }
 
 .heart-button {
-    font-size: 48px;
+    font-size: 28px;
     color: gray;
     cursor: pointer;
     background: none;
@@ -211,13 +211,10 @@ input,select {
     outline: none;
 }
 
-.heart-button:hover {
+.far.fa-heart i {
     color: gray;
 }
 
-.heart-button.active {
-    color: red;
-}
 
 .heart-button.liked {
     color: red;
