@@ -258,6 +258,7 @@ html {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: nowrap;
     }
 
     .button__title {
@@ -268,7 +269,7 @@ html {
     }
 
     .heart-button {
-        font-size: 48px;
+        font-size: 28px;
         color: gray;
         cursor: pointer;
         background: none;
