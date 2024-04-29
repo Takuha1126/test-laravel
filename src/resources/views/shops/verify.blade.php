@@ -90,7 +90,24 @@
             document.getElementById('checkQRCode').addEventListener('click', function() {
                 const qrCodeData = document.getElementById('qrCodeData').value;
                 // ここで QR コードのデータを使って予約の確認などの処理を行う
+                // 仮の処理例として、予約情報を表示するだけにしています
+                const reservationInfo = {
+                    userName: 'John Doe',
+                    reservationDate: '2024-05-01',
+                    reservationTime: '14:00',
+                    numberOfPeople: '2'
+                };
+                displayReservationInfo(reservationInfo);
             });
+
+            function displayReservationInfo(reservation) {
+                document.getElementById('userName').innerText = reservation.userName;
+                document.getElementById('reservationDate').innerText = reservation.reservationDate;
+                document.getElementById('reservationTime').innerText = reservation.reservationTime;
+                document.getElementById('numberOfPeople').innerText = reservation.numberOfPeople;
+
+                document.getElementById('reservationInfo').style.display = 'block';
+            }
         });
     </script>
 </body>
