@@ -107,7 +107,6 @@ table {
     }
     
     .nav>div {
-        width: 100%;
         margin-bottom: 10px;
     }
 
@@ -124,11 +123,12 @@ table {
     }
 
     .shop a,
+    .send-mail a,
     .logout__button,
     .table__th,
     .table__td,
     .delete {
-        font-size: smaller;
+        font-size: 10px;
     }
 
 

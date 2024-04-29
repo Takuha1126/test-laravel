@@ -122,8 +122,13 @@ html {
     }
     
     .nav>div {
-        width: 100%;
         margin-bottom: 10px;
+    }
+
+    .shop a,
+    .send-mail a,
+    .logout__button {
+        font-size: 10px;
     }
 
     .main {
@@ -151,5 +156,6 @@ html {
     .form-group input {
         width: 48%;
         margin-right: 10px;
+        color: #000;
     }
 }
