@@ -36,7 +36,7 @@
             <button id="startScan" class="btn btn-primary">スキャンを開始</button>
         </div>
         <div class="main__about">
-            <p class="about__title">もし読み込めなかった場合はQRコードアプリで読み込んだ情報をこちらにお書きください</p>
+            <p class="about__title">QRコードの情報が読み込めましたらスキャンして確認してください。また読み込めなかった場合でもQRコード読み取りアプリで読み込んだ情報を記入しスキャンしてください。</p>
             <div class="main__group">
                 <div class="main__ttl">
                     <form id="qrVerificationForm">
