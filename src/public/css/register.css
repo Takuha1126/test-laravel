@@ -110,11 +110,12 @@ main {
     .main__email input,
     .main__password input {
         flex: 1;
-        border: none;
+        border: 0;
         padding-left: 10px;
         font-size: 15px;
         border-bottom: 1px solid #000;
         margin-left: 5px;
+        outline: none;
     }
 
     .button {
