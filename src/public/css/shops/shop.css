@@ -129,7 +129,7 @@ html {
 
     .nav__button a,
     .logout__button {
-        margin-left: 10px;
+        font-size: 10px;
     }
 
     .main__item {

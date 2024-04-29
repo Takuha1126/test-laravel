@@ -96,6 +96,15 @@ html {
         margin-right: 10px;
     }
 
+    .nav__button a,
+    .logout__button {
+        font-size: 10px;
+    }
+
+    .logout__button {
+        padding: 6px 5px;
+    }
+
     .table__th,
     .table__td {
         padding: 12px;

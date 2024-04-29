@@ -98,6 +98,18 @@ table {
 }
 
 @media (max-width: 768px) {
+    .header__item {
+        font-size: 20px;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav>div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
     .header__ttl,
     .table__th,
@@ -111,7 +123,6 @@ table {
         margin-left: 10px;
     }
 
-    .header__item,
     .shop a,
     .logout__button,
     .table__th,

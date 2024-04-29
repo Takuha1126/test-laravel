@@ -3,9 +3,7 @@ html {
     margin: 0px;
     padding: 0px;
     background-color: #dddddd;
-    overflow-x: hidden;
-    overflow-y: auto;
-    overflow: hidden;
+
 }
 
 .header {
@@ -129,15 +127,13 @@ html {
 
 @media (max-width: 768px) {
     .nav {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .shop,
     .logout {
-        margin-right: 10px;
+        margin-right: 5px;
         margin-top: 5px;
         flex-shrink: 0;
     }
@@ -177,6 +173,7 @@ html {
         width: 100%;
         margin-bottom: 15px;
         padding: 10px 0;
+        color: #000;
     }
 
     .label {

@@ -112,7 +112,10 @@ html {
         margin: 0 auto;
     }
 
-    .header__title,
+    .header__title{
+        font-size: smaller;
+        margin-left: 30px;
+    }
     .main__ttl {
         font-size: 20px;
     }
@@ -124,6 +127,7 @@ html {
     .label {
         margin-left: 10px;
         margin-top: 20px;
+        font-size: 15px;
     }
 
     .email input,

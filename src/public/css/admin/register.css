@@ -89,27 +89,28 @@ html {
 
 @media (max-width: 768px) {
 
-    .header,
-    .header__ttl {
+    header,
+    .header__ttl{
         max-width: 100%;
+        margin: 0 auto;
     }
-
     .header__title {
         margin-left: 30px;
+        font-size: smaller;
     }
 
-    .header__title,
     .main__ttl,
     .main__about,
     .shop select,
     .shop input,
     .password input {
-        font-size: smaller;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .main {
         margin: 100px auto;
-        max-width: 90%;
+        max-width: 95%;
     }
 
     .shop,
@@ -119,12 +120,13 @@ html {
     }
 
     .label {
-        margin-left: 5px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 
 
     .shop input {
-        width: 55%;
+        width: 50%;
         margin-left: 10px;
         margin-right: 20px;
         font-size: 15px;
