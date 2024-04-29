@@ -9,7 +9,27 @@
     <script src="https://unpkg.com/@zxing/library@latest"></script>
 </head>
 <body>
-    <main>
+    <header class="header">
+        <div class="header__ttl">
+            <div class="header__title">
+                <p class="header__item">QRコード確認</p>
+            </div>
+            <nav class="nav">
+                <div class="nav__button">
+                    <div class="button__item">
+                        <a class="button" href="{{ route('shops.reservations.list')}}" >予約一覧</a>
+                    </div>
+                    <div class="logout">
+                        <form action="{{ route('shop.logout') }}" method="POST">
+                        @csrf
+                            <button type="submit" class="logout__button">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
         <p class="main__title">利用者から提供されたQRコードをデバイスのカメラでスキャンして予約を確認します。</p>
         <div class="main__item">
             <video id="externalCamera" style="width: 100%; max-width: 350px;"></video>
@@ -89,8 +109,7 @@
 
             document.getElementById('checkQRCode').addEventListener('click', function() {
                 const qrCodeData = document.getElementById('qrCodeData').value;
-                // ここで QR コードのデータを使って予約の確認などの処理を行う
-                // 仮の処理例として、予約情報を表示するだけにしています
+                
                 const reservationInfo = {
                     userName: 'John Doe',
                     reservationDate: '2024-05-01',
