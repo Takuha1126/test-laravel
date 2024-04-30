@@ -17,15 +17,11 @@ class SendReservationReminders extends Command
     {
         $users = User::all();
         foreach ($users as $user) {
-    $reservations = $user->reservations()->whereDate('date', now())->get();
-    foreach ($reservations as $reservation) {
-        try {
-            Mail::to($user->email)->send(new ReservationReminder($reservation));
-        } catch (\Exception $e) {
-            \Log::error("Reservation reminder to {$user->email} failed: " . $e->getMessage());
+            $reservations = $user->reservations()->whereDate('date', now())->get();
+            foreach ($reservations as $reservation) {
+                Mail::to($user->email)->send(new ReservationReminder($reservation));
+            }
         }
-    }
-}
 
         $this->info('Reservation reminders sent successfully!');
 
