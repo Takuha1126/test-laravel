@@ -42,7 +42,7 @@
                     </div>
                     <div class="about">
                         <select name="reservation_time" id="time-select">
-                            @for ($i = 11; $i <= 22; $i++)
+                            @for ($i = 11; $i <= 23; $i++)
                         <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}:00">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}:00</option>
                         <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}:30">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}:30</option>
                         @endfor
