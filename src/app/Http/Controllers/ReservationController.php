@@ -66,50 +66,40 @@ class ReservationController extends Controller
     }
 
     public function update(ReservationUpdateRequest $request, $id)
-{
-    $validatedData = $request->validated();
-
-    $reservation = Reservation::findOrFail($id);
-
-    $newDate = $request->input('new_date');
-    $newNumberOfPeople = $request->input('new_number_of_people');
-    $newReservationTime = $request->input('new_reservation_time');
-
-    $reservation->update([
-        'date' => $newDate,
-        'number_of_people' => $newNumberOfPeople,
-        'reservation_time' => $newReservationTime,
-    ]);
-
-    return redirect()->route('done');
-}
-
-    public function show($id)
-{
-    $reservation = Reservation::find($id);
-
-    if (!$reservation) {
-        return redirect()->back();
+    {
+        $validatedData = $request->validated();
+        $reservation = Reservation::findOrFail($id);
+        $this->updateReservation($reservation, $request);
+        return redirect()->route('done');
     }
 
-    $reservationData = json_encode([
-        'id' => $reservation->id,
-        'user_id' => $reservation->user_id,
-        'shop_id' => $reservation->shop_id,
-        'date' => $reservation->date,
-        'reservation_time' => $reservation->reservation_time,
-        'number_of_people' => $reservation->number_of_people,
-        'status' => $reservation->status,
-    ]);
+    private function updateReservation($reservation, $request)
+    {
+        $reservation->update([
+            'date' => $request->input('new_date'),
+            'number_of_people' => $request->input('new_number_of_people'),
+            'reservation_time' => $request->input('new_reservation_time'),
+        ]);
+    }
 
-
-
-    $qrCode = QrCode::size(200)->generate($reservationData);
-
-    return view('qr', compact('reservation', 'qrCode', 'reservationData'));
-
-}
-
+    public function show($id)
+    {
+        $reservation = Reservation::find($id);
+        if (!$reservation) {
+            return redirect()->back();
+        }
+        $reservationData = json_encode([
+            'id' => $reservation->id,
+            'user_id' => $reservation->user_id,
+            'shop_id' => $reservation->shop_id,
+            'date' => $reservation->date,
+            'reservation_time' => $reservation->reservation_time,
+            'number_of_people' => $reservation->number_of_people,
+            'status' => $reservation->status,
+        ]);
+        $qrCode = QrCode::size(200)->generate($reservationData);
+        return view('qr', compact('reservation', 'qrCode', 'reservationData'));
+    }
 
     public function showReservationList()
     {
@@ -124,44 +114,28 @@ class ReservationController extends Controller
     }
 
     public function verify(Request $request)
-{
-    $qrCodeData = $request->input('qr_code_data');
-
-
-
-    if (!$qrCodeData || empty($qrCodeData)) {
-        return response()->json(['error' => '不正なデータ形式です'], 400);
+    {
+        $qrCodeData = $request->input('qr_code_data');
+        if (!$qrCodeData || empty($qrCodeData)) {
+            return response()->json(['error' => '不正なデータ形式です'], 400);
+        }
+        $reservationData = json_decode($qrCodeData, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return response()->json(['error' => 'JSONの構文が無効です'], 400);
+        }
+        if (!is_array($reservationData) || !isset($reservationData['id'])) {
+            return response()->json(['error' => '不正なデータ形式です'], 400);
+        }
+        $reservation = Reservation::find($reservationData['id']);
+        if (!$reservation) {
+            return response()->json(['error' => '予約が見つかりません'], 404);
+        }
+        $responseData = [
+            'name' => $reservation->user->name,
+            'date' => $reservation->date,
+            'time' => $reservation->reservation_time,
+            'number_of_people' => $reservation->number_of_people,
+        ];
+        return response()->json($responseData);
     }
-
-
-    $reservationData = json_decode($qrCodeData, true);
-
-
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        return response()->json(['error' => 'JSONの構文が無効です'], 400);
-    }
-
-
-
-    if (!is_array($reservationData) || !isset($reservationData['id'])) {
-        return response()->json(['error' => '不正なデータ形式です'], 400);
-    }
-
-    $reservation = Reservation::find($reservationData['id']);
-
-    if (!$reservation) {
-        return response()->json(['error' => '予約が見つかりません'], 404);
-    }
-
-    $responseData = [
-        'name' => $reservation->user->name,
-        'date' => $reservation->date,
-        'time' => $reservation->reservation_time,
-        'number_of_people' => $reservation->number_of_people,
-    ];
-
-    return response()->json($responseData);
-}
-
-
 }

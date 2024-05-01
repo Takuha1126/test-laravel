@@ -19,19 +19,16 @@ class AdminAuthController extends Controller
     }
 
 
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->only('email', 'password');
 
-
-
-public function login(LoginRequest $request)
-{
-    $credentials = $request->only('email', 'password');
-
-    if (Auth::guard('admin')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt($credentials)) {
         return redirect()->route('admin.index');
-    } else {
+        } else {
         return back()->withInput()->withErrors(['loginError' => 'メールアドレスまたはパスワードが間違っています。']);
+        }
     }
-}
 
 
 
@@ -45,12 +42,12 @@ public function login(LoginRequest $request)
     }
 
     public function showRegistrationForm()
-{
-    return view('admin.register');
-}
+    {
+        return view('admin.register');
+    }
 
-public function register(AdminRequest $request)
-{
+    public function register(AdminRequest $request)
+    {
 
     $admin = Admin::create([
         'admin_name' => $request->admin_name,
@@ -62,6 +59,6 @@ public function register(AdminRequest $request)
     Auth::guard('admin')->login($admin);
 
     return redirect()->route('admin.index');
-}
+    }
 
 }

@@ -7,8 +7,8 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\RegisterRequest; // RegisterRequestをインポート
-use Illuminate\Auth\Events\Registered; // 追加
+use App\Http\Requests\RegisterRequest;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {

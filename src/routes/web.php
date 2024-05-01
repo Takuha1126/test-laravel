@@ -12,7 +12,8 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\Auth\ShopAuthController;
 use App\Http\Controllers\CreateShopRepresentativeController;
-use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Auth\AdminRegisterController;
+use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\PaymentController;
 
 
@@ -92,11 +93,11 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 
 
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login']);
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-Route::get('/admin/register', [AdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
-Route::post('/admin/register', [AdminAuthController::class, 'register']);
+Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminLoginController::class, 'login']);
+Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+Route::get('/admin/register', [AdminRegisterController::class, 'showRegistrationForm'])->name('admin.register');
+Route::post('/admin/register', [AdminRegisterController::class, 'register']);
 
 
 
