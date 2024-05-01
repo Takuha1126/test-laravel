@@ -13,7 +13,7 @@
 </head>
 <body>
     <header class="header">
-        <form action="/search" method="post">
+        <form id="searchForm"　action="/search" method="post">
             @csrf
         <div class="header__item">
             <div class="header__ttl">
@@ -186,6 +186,12 @@ $(document).ready(function() {
     function setupFilters() {
         $('#searchInput, #areaSelect, #genreSelect').on('input change', function() {
             filterCards();
+        });
+        $('#searchInput').on('keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                filterCards();
+            }
         });
     }
 

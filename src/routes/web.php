@@ -14,7 +14,6 @@ use App\Http\Controllers\Auth\ShopAuthController;
 use App\Http\Controllers\CreateShopRepresentativeController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ImageUploadController;
 
 
 
