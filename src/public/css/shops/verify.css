@@ -152,6 +152,8 @@ label {
         justify-content: center;
     }
 
+
+
     .main__ttl {
         margin-right: 0;
         margin-bottom: 20px;
@@ -169,6 +171,7 @@ label {
 
     .check__button {
         margin-top: 20px;
+        margin-right: 20px;
     }
 
     .reservation__group {

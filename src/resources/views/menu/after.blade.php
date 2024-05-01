@@ -16,7 +16,6 @@
             <a class="header__title" href="{{ route('home') }}"><i class="fas fa-square fa-times fa-xs fa-2x" style= "color: #fff;"></i></a>
         </div>
     </header>
-
     <main class="main">
         <div class="menu">
             <div class="menu__ttl">

@@ -8,8 +8,6 @@
 <body>
     <h1>予約リマインダー</h1>
     <p>こちらは今日の予約リマインダーです。</p>
-
-    
     <h2>予約情報</h2>
     <ul>
         <li>店舗名: {{ $reservation->shop->shop_name }}</li>

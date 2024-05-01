@@ -131,6 +131,10 @@ html {
         font-size: 10px;
     }
 
+    .logout__button {
+        padding: 4px;
+    }
+
     .main {
         max-width: 100%;
     }
