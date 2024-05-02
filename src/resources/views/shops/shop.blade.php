@@ -95,6 +95,9 @@
                         <label class="label">お店の紹介</label>
                         <textarea name="description" cols="30" rows="10" placeholder="お客さんのことを考えて料理します。"></textarea>
                     </div>
+                     @error('description')
+                        <div class="error-message">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="button">
                     <button class="button__ttl" type="submit">保存</button>

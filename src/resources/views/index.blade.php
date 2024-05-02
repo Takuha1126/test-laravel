@@ -13,7 +13,7 @@
 </head>
 <body>
     <header class="header">
-        <form id="searchForm"　action="/search" method="post">
+        <form id="searchForm" action="/search" method="post">
             @csrf
         <div class="header__item">
             <div class="header__ttl">

@@ -19,6 +19,7 @@ class ShopUpdateRequest extends FormRequest
             'shop_name' => 'required|string|max:191',
             'area_id' => 'required',
             'genre_id' => 'required',
+            'description' => 'required|string|max:255',
         ];
     }
 
@@ -31,6 +32,9 @@ class ShopUpdateRequest extends FormRequest
             'shop_name.max' => '店舗名は255文字以内で入力してください。',
             'area_id.required' => 'エリア名は必須です。',
             'genre_id.required' => 'ジャンル名は必須です。',
+            'description.required' => 'お店の紹介は必須です。',
+            'description.string' => '文字列で入力してください。',
+            'description.max' => '255文字以内で入力してください。',
         ];
     }
 }
