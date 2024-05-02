@@ -5,6 +5,7 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Console\Commands\SendReservationReminders;
+use App\Console\Commands\DeleteExpiredReservations;
 
 class Kernel extends ConsoleKernel
 {
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(SendReservationReminders::class)->dailyAt('08:00');
+        $schedule->command('reservations:delete-expired')->everyMinute();
     }
 
     /**

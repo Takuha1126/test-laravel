@@ -23,16 +23,16 @@ class ReservationController extends Controller
         $userId = Auth::id();
 
         if ($this->checkDuplicateReservation($request, $userId)) {
-            return redirect()->back()->with('error', '同じ時間と場所に他の予約が既にあります。')->withInput();
+            return $this->redirectBackWithError('同じ時間と場所に他の予約が既にあります。');
         }
 
         try {
             $this->createReservation($request, $userId);
         } catch (QueryException $e) {
-            return redirect()->back()->with('error', 'データベースエラーが発生しました。')->withInput();
+            return $this->redirectBackWithError('データベースエラーが発生しました。');
         }
 
-        return redirect()->route('done');
+        return $this->redirectToDone();
     }
 
     private function checkDuplicateReservation($request, $userId)
@@ -40,7 +40,7 @@ class ReservationController extends Controller
         return DB::transaction(function () use ($request, $userId) {
             $existingReservation = Reservation::where('shop_id', $request->shop_id)
                 ->where('date', $request->date)
-                ->where('reservation_time', date('H:i:s', strtotime($request->reservation_time)))
+                ->where('reservation_time', $this->formatTime($request->reservation_time))
                 ->where('user_id', $userId)
                 ->lockForUpdate()
                 ->first();
@@ -53,7 +53,7 @@ class ReservationController extends Controller
     {
         $reservationData = $request->only(['shop_id', 'date', 'reservation_time', 'number_of_people', 'status']);
         $reservationData['user_id'] = $userId;
-        $reservationData['reservation_time'] = date('H:i:s', strtotime($request->reservation_time));
+        $reservationData['reservation_time'] = $this->formatTime($request->reservation_time);
 
         Reservation::create($reservationData);
     }
@@ -62,15 +62,14 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::findOrFail($id);
         $reservation->delete();
-        return redirect()->route('mypage');
+        return $this->routeTo('mypage');
     }
 
     public function update(ReservationUpdateRequest $request, $id)
     {
-        $validatedData = $request->validated();
         $reservation = Reservation::findOrFail($id);
         $this->updateReservation($reservation, $request);
-        return redirect()->route('done');
+        return $this->redirectToDone();
     }
 
     private function updateReservation($reservation, $request)
@@ -86,7 +85,7 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::find($id);
         if (!$reservation) {
-            return redirect()->back();
+            return $this->redirectBack();
         }
         $reservationData = json_encode([
             'id' => $reservation->id,
@@ -137,5 +136,30 @@ class ReservationController extends Controller
             'number_of_people' => $reservation->number_of_people,
         ];
         return response()->json($responseData);
+    }
+
+    private function formatTime($time)
+    {
+        return date('H:i:s', strtotime($time));
+    }
+
+    private function redirectBack()
+    {
+        return redirect()->back();
+    }
+
+    private function redirectBackWithError($errorMessage)
+    {
+        return redirect()->back()->with('error', $errorMessage)->withInput();
+    }
+
+    private function redirectToDone()
+    {
+        return redirect()->route('done');
+    }
+
+    private function routeTo($route)
+    {
+        return redirect()->route($route);
     }
 }

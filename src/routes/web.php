@@ -39,10 +39,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/search', [ShopController::class, 'search'])->name('search.get');
     Route::post('/search', [ShopController::class, 'search'])->name('search.post');
     Route::get('/done', [ReservationController::class, 'completed'])->name('done');
+    Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservation.show');
     Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
     Route::put('/reservations/{id}', [ReservationController::class, 'update'])->name('reservation.update');
     Route::delete('/reservations/{id}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
-    Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservation.show');
     Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage');
     Route::get('/thanks', [ThankController::class, 'index'])->name('thanks');
     Route::get('/favorite/status/{shopId}', [FavoriteController::class, 'getStatus'])->name('favorite.status');
