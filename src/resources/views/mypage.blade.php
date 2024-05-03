@@ -155,6 +155,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const today = new Date();
+    const dateString = today.toISOString().substring(0, 10);
+    document.getElementById('new_date').value = dateString;
+  });
 $(function() {
     $('.heart-button').click(function(event) {
         event.preventDefault();

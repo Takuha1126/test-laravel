@@ -118,10 +118,12 @@
 
 .visit-button {
     margin-right: 10px;
+    white-space: nowrap;
 }
 
 .edit-button {
     margin-left: 10px;
+    white-space: nowrap;
 }
 
 .new__date,
@@ -134,10 +136,12 @@
 input {
     border-radius: 3px;
     border: none;
+    white-space: nowrap;
 }
 
 input,select {
     width: 90px;
+    color: #000;
 }
 
 .favorite__container {
@@ -274,6 +278,8 @@ input,select {
     .new__time select,
     .new__people select {
         width: 100%;
+        white-space: nowrap;
+        color: #000;
     }
 
     .button,
@@ -285,6 +291,24 @@ input,select {
     .button__title {
         font-size: 12px;
         padding: 5px;
+    }
+
+    .payment-button,
+    .edit-button,
+    .visit-button {
+        color: #000;
+        background-color: #fff;
+        white-space: nowrap;
+        border-radius: 3px;
+        border: none;
+    }
+
+    .update-button,
+    .cancel-button {
+        color: #000;
+        background-color: #fff;
+        border-radius: 3px;
+        border: none;
     }
 
     .favorite_button,
