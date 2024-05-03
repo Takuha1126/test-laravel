@@ -74,7 +74,6 @@
     border: 1px solid #fff;
     width: 200px;
     white-space: nowrap;
-    background-color: #fff;
 }
 
 
@@ -165,11 +164,13 @@
         width: 80%;
         color: #000;
         white-space: nowrap;
+        background-color: #fff;
     }
 
     .about select {
         width: 80%;
         color: #000;
+        background-color: #fff;
     }
 
     .form__item {
