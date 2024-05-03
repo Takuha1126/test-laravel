@@ -118,12 +118,10 @@
 
 .visit-button {
     margin-right: 10px;
-    white-space: nowrap;
 }
 
 .edit-button {
     margin-left: 10px;
-    white-space: nowrap;
 }
 
 .new__date,
@@ -136,7 +134,7 @@
 input {
     border-radius: 3px;
     border: none;
-    white-space: nowrap;
+
 }
 
 input,select {
@@ -297,7 +295,6 @@ input,select {
     .visit-button {
         color: #000;
         background-color: #fff;
-        white-space: nowrap;
         border-radius: 3px;
         border: none;
     }
