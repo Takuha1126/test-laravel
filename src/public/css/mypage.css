@@ -134,12 +134,10 @@
 input {
     border-radius: 3px;
     border: none;
-
 }
 
 input,select {
     width: 90px;
-    color: #000;
 }
 
 .favorite__container {
@@ -276,7 +274,6 @@ input,select {
     .new__time select,
     .new__people select {
         width: 100%;
-        color: #000;
     }
 
     .button,
@@ -295,17 +292,14 @@ input,select {
     .visit-button {
         color: #000;
         background-color: #fff;
-        border-radius: 3px;
-        border: none;
     }
 
     .update-button,
     .cancel-button {
         color: #000;
         background-color: #fff;
-        border-radius: 3px;
-        border: none;
     }
+
 
     .favorite_button,
     .favorite__group,
