@@ -298,7 +298,6 @@ input,select {
     .update-button,
     .cancel-button {
         border: none;
-        white-space: nowrap;
         border-radius: 3px;
         color: #000;
         margin-top: 10px;
