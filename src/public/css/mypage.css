@@ -298,11 +298,11 @@ input,select {
 
     .update-button,
     .cancel-button {
-        white-space: nowrap;
         border: none;
         border-radius: 3px;
         color: #000;
         margin-top: 10px;
+        background: #fff;
     }
 
 
