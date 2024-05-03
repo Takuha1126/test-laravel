@@ -74,6 +74,7 @@
     border: 1px solid #fff;
     width: 200px;
     white-space: nowrap;
+    background-color: #fff;
 }
 
 
@@ -82,7 +83,7 @@
     border: 1px solid #fff;
     width: 400px;
     padding: 2px 0;
-
+    background-color: #fff;
 }
 
 .form__item {
