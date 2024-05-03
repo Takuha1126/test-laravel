@@ -287,19 +287,6 @@ input,select {
         padding: 5px;
     }
 
-    .payment-button,
-    .edit-button,
-    .visit-button {
-        color: #000;
-        background-color: #fff;
-    }
-
-    .update-button,
-    .cancel-button {
-        color: #000;
-        background-color: #fff;
-    }
-
 
     .favorite_button,
     .favorite__group,
