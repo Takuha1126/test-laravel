@@ -287,6 +287,24 @@ input,select {
         padding: 5px;
     }
 
+    .payment-button,
+    .edit-button,
+    .visit-button {
+        white-space: nowrap;
+        border: none;
+        border-radius: 3px;
+        color: #000;
+    }
+
+    .update-button,
+    .cancel-button {
+        white-space: nowrap;
+        border: none;
+        border-radius: 3px;
+        color: #000;
+        margin-top: 10px;
+    }
+
 
     .favorite_button,
     .favorite__group,
