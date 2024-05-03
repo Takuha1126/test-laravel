@@ -276,6 +276,7 @@ input,select {
         width: 100%;
         white-space: nowrap;
         color: #000;
+        background-color: #fff;
     }
 
     .button,
