@@ -278,7 +278,6 @@ input,select {
     .new__time select,
     .new__people select {
         width: 100%;
-        white-space: nowrap;
         color: #000;
     }
 
