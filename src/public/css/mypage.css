@@ -290,7 +290,6 @@ input,select {
     .payment-button,
     .edit-button,
     .visit-button {
-        white-space: nowrap;
         border: none;
         border-radius: 3px;
         color: #000;
@@ -299,6 +298,7 @@ input,select {
     .update-button,
     .cancel-button {
         border: none;
+        white-space: nowrap;
         border-radius: 3px;
         color: #000;
         margin-top: 10px;
