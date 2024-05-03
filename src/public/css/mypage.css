@@ -274,6 +274,8 @@ input,select {
     .new__time select,
     .new__people select {
         width: 100%;
+        white-space: nowrap;
+        color: #000;
     }
 
     .button,
@@ -293,14 +295,14 @@ input,select {
         border: none;
         border-radius: 3px;
         color: #000;
+        background: #fff;
     }
 
-        .new__date-label,
-        .new__date-input {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            /* 必要に応じて調整してください */
+    .new__date-label,
+    .new__date-input {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
         }
 
     .update-button,
