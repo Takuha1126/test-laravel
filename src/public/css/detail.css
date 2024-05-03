@@ -72,14 +72,15 @@
 .item input {
     border-radius: 5px;
     border: 1px solid #fff;
-    width: 200px;
+    width: 85%;
+    white-space: nowrap;
 }
 
 
 .about select {
     border-radius: 5px;
     border: 1px solid #fff;
-    width: 400px;
+    width: 85%;
     padding: 2px 0;
 
 }
@@ -88,7 +89,7 @@
     background-color: #4D8BFF;
     border-radius: 5px;
     padding: 20px;
-    width: 400px;
+    width: 87%;
     margin-left: 30px;
 
 }
@@ -160,18 +161,18 @@
     }
 
     .item input {
-        width: 80%;
+        width: 100%;
         color: #000;
         white-space: nowrap;
     }
 
     .about select {
-        width: 80%;
+        width: 100%;
         color: #000;
     }
 
     .form__item {
-        width: 82%;
+        width: 100%;
         margin-top: 30px;
     }
 
