@@ -162,6 +162,7 @@
     .item input {
         width: 80%;
         color: #000;
+        white-space: nowrap;
     }
 
     .about select {
