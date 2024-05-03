@@ -275,6 +275,7 @@ html {
         background: none;
         border: none;
         outline: none;
+        margin-left: 10px;
     }
 
     .heart-button:hover {
