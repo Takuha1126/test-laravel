@@ -287,6 +287,31 @@ input,select {
         padding: 5px;
     }
 
+    .payment-button,
+    .edit-button,
+    .visit-button {
+        border: none;
+        border-radius: 3px;
+        color: #000;
+    }
+
+        .new__date-label,
+        .new__date-input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            /* 必要に応じて調整してください */
+        }
+
+    .update-button,
+    .cancel-button {
+        border: none;
+        border-radius: 3px;
+        color: #000;
+        margin-top: 10px;
+        background: #fff;
+    }
+
 
     .favorite_button,
     .favorite__group,
