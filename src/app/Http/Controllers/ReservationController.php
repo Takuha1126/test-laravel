@@ -83,7 +83,7 @@ class ReservationController extends Controller
 
     public function show($id)
     {
-        $reservation = Reservation::find($id);
+        $reservation = Reservation::where('id', $id)->first();
         if (!$reservation) {
             return $this->redirectBack();
         }

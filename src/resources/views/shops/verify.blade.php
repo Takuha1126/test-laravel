@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>QRコードスキャナー</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/shops/verify.css') }}" />
@@ -109,22 +110,39 @@
 
             document.getElementById('checkQRCode').addEventListener('click', function() {
                 const qrCodeData = document.getElementById('qrCodeData').value;
-                
-                const reservationInfo = {
-                    userName: 'John Doe',
-                    reservationDate: '2024-05-01',
-                    reservationTime: '14:00',
-                    numberOfPeople: '2'
-                };
-                displayReservationInfo(reservationInfo);
+
+
+                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+                const apiUrl = '/shop/verify';
+
+
+                fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                },
+                    body: JSON.stringify({ qr_code_data: qrCodeData })
+                })
+                .then(response => {
+                if (!response.ok) {
+                    throw new Error('予約情報の取得に失敗しました');
+                }
+                    return response.json();
+                })
+                .then(data => {
+                    displayReservationInfo(data);
+                })
+                .catch(error => {
+                    console.error('予約情報の取得エラー:', error);
+                });
             });
-
             function displayReservationInfo(reservation) {
-                document.getElementById('userName').innerText = reservation.userName;
-                document.getElementById('reservationDate').innerText = reservation.reservationDate;
-                document.getElementById('reservationTime').innerText = reservation.reservationTime;
-                document.getElementById('numberOfPeople').innerText = reservation.numberOfPeople;
-
+                document.getElementById('userName').innerText = reservation.name;
+                document.getElementById('reservationDate').innerText = reservation.date;
+                document.getElementById('reservationTime').innerText = reservation.time;
+                document.getElementById('numberOfPeople').innerText = reservation.number_of_people;
                 document.getElementById('reservationInfo').style.display = 'block';
             }
         });
