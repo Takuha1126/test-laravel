@@ -46,14 +46,22 @@ class EvaluationController extends Controller
 
     public function visit(Request $request, $reservationId)
     {
-        $reservation = Reservation::find($reservationId);
+        try {
+            DB::beginTransaction();
 
-        if (!$reservation) {
-            abort(404);
+            $reservation = Reservation::find($reservationId);
+
+            if (!$reservation) {
+                abort(404);
+            }
+
+            $reservation->delete();
+            DB::commit();
+            return redirect()->route('evaluation.show');
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
         }
-
-        $reservation->delete();
-
-        return redirect()->route('evaluation.show');
     }
 }
